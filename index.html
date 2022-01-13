@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/97f6f8e3bf.js" crossorigin="anonymous"></script>
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Job Application Form</h1>
+        <form action="#">
+            <div class="personal-information">
+                <h2>Personal Information</h2>
+                <table>
+                    <tr>
+                        <td><label for="name">Name:</label></td>
+                        <td><input type="text" name="name" id="name" required></td>
+                        <td class="asterix"><sup>*</sup></td>
+                    </tr>
+                    <tr>
+                        <td><label for="surname">Surname:</label></td>
+                        <td><input type="text" name="surname" id="surname" required></td>
+                        <td class="asterix"><sup>*</sup></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email:</label></td>
+                        <td><input type="email" name="email" id="email" placeholder="example@example.com" required></td>
+                        <td class="asterix"><sup>*</sup></td>
+                    </tr>
+                    <tr>
+                        <td><label for="telephone">Telephone:</label></td>
+                        <td>
+                            +<input type="number" min="01" max="99" placeholder="55">
+                            <input type="tel" name="telephone" id="telephone" placeholder="555-555-5555">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="gender">Gender:</label></td>
+                        <td>
+                            <label for="male">Male</label>
+                            <input type="radio" name="gender" id="male" checked>
+                            <label for="female">Female</label>
+                            <input type="radio" name="gender" id="female">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="linkedin">LinkedIn:</label></td>
+                        <td><input type="text" name="linkedin" id="linkedin" required></td>
+                        <td class="asterix"><sup>*</sup></td>
+                    </tr>
+                    <tr>
+                        <td><label for="github">GitHub:</label></td>
+                        <td><input type="text" name="github" id="github" required></td>
+                        <td class="asterix"><sup>*</sup></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="education">
+                <h2>Education</h2>
+                <table>
+                    <tr>
+                        <td><label for="graduation">Degree of Graduation:</label></td>
+                        <td>
+                            <select name="graduation" id="graduation">
+                                <option value="high-school">High-school</option>
+                                <option value="two-years-degree">Two-years Degree</option>
+                                <option value="bachelors-degree" selected>Bachelor's Degree</option>
+                                <option value="master-degree">Master Degree</option>
+                                <option value="doctorate-degree">Doctorate Degree</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="school">Graduated School:</label></td>
+                        <td><input type="text" name="school" id="school" required></td>
+                        <td class="asterix"><sup>*</sup></td>
+                    </tr>
+                    <tr>
+                        <td><label for="department">Department of Graduation:</label></td>
+                        <td><input type="text" name="department" id="department" required></td>
+                        <td class="asterix"><sup>*</sup></td>
+                    </tr>
+                    <tr>
+                        <td><label for="graduation-date">Date of Graduation:</label></td>
+                        <td><input type="date" min="1990-01-01" max="2022-01-01"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="experience">
+                <h2>Work Experience</h2>
+                <div class="area">
+                    <label for="work-experience">Please write down your past experiences:</label><span
+                        class="asterix">*</span>
+                    <textarea name="work-experience" id="work-experience" cols="50" rows="8" required></textarea>
+                </div>
+            </div>
+            <div>
+                <h2>Skills</h2>
+                <table>
+                    <tr>
+                        <td><label for="python">Python:</label></td>
+                        <td><input type="range" name="python" id="python" min="0" max="10"></td>
+                        <td><label for="html-css">HTML-CSS:</label></td>
+                        <td><input type="range" name="html-css" id="html-css" min="0" max="10"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="javascript">JavaScript:</label></td>
+                        <td><input type="range" name="javascript" id="javascript" min="0" max="10"></td>
+                        <td><label for="react">React:</label></td>
+                        <td><input type="range" name="react" id="react" min="0" max="10"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="django">Django:</label></td>
+                        <td><input type="range" name="django" id="django" min="0" max="10"></td>
+                        <td><label for="english">English:</label></td>
+                        <td><input type="range" name="english" id="english" min="0" max="10"></td>
+                    </tr>
+                    <tr>
+                        <td>Certificates:</td>
+                        <td><button style="cursor:pointer" onclick="$('#input').click()">Click to Attach</button></td>
+                        <td><input type="file" id="input" style="display:none" multiple></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="buttons">
+                <input type="reset" id="reset" value="Reset" onclick="return resetPage()">
+                <input type="submit" id="send" value="Apply" onclick="return sendForm()">
+            </div>
+        </form>
+    </div>
+    <footer>Copyright © by Yusuf Demirci <i class="fab fa-github"></i></footer>
+</body>
+
+</html>
